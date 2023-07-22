@@ -100,3 +100,33 @@
 # ■ Створити список цілих, що містить лише негативні числа з першого списку;
 #
 # ■ Створити список цілих, що містить лише позитивні числа з першого списку.
+
+# Імпоритуємо модуль рандому:
+import random
+
+# Створюємо список, та завдяки random.randint() Заповнюємо його рандомними числами,
+# у функції range вказуємо бажану довжину списку та виводимо список у консоль
+nums = list()
+for i in range(10):
+    nums.append(random.randint(-10, 10))
+print(f'Отримані числа: {nums}')
+
+couples_nums = []
+odd_nums = []
+negative_nums = []
+positive_nums = []
+
+for i in nums:
+    if i % 2 == 0:
+        couples_nums.append(i)
+    if i % 2 == 1:
+        odd_nums.append(i)
+    if i < 0:
+        negative_nums.append(i)
+    if i >= 0:
+        positive_nums.append(i)
+print('\nЗ них: ')
+print(f'Парні: {couples_nums}')
+print(f'Непарні: {odd_nums}')
+print(f'від\'ємні: {negative_nums}')
+print(f'Позитивні: {positive_nums}')
